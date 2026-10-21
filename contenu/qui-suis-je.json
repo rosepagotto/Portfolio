@@ -1,0 +1,30 @@
+{
+  "photo": "/images/image2026-10-19204003937.png",
+  "legende": "Toute en vert",
+  "phrase": "Dans les grandes lignes, je fais ce qu'il me plaît ! Entre ces lignes, on y voit la minutie et l'amour injecté.",
+  "histoire": "Jeune animatrice du sud-girondin, j'ai toujours aimé partager mes passions et entreprendre des projets pour répondre aux besoins de mon entourage et aux miens.\n\nVenir y mêler l'audiovisuel, le militantisme, les jeux vidéo, la photographie, les arts plastiques, et tous mes centres d'intérêts qui gravitent autour est pour moi naturel, tout en apprenant de celleux qui m'accompagnent.",
+  "passions": [
+    {
+      "titre": "Les jeux vidéo",
+      "texte": "Depuis mon enfance, je suis baignée dedans et en ait accumulé une connaissance large et diverse sur les nombreux domaines qui les composent."
+    },
+    {
+      "titre": "Marvel",
+      "texte": "L'une des rares œuvres américapitalistes dont je ne pourrais me passer tant j'en ai de connaissances et pour lequel je porte un intérêt particulier."
+    }
+  ],
+  "en_vrac": [
+    {
+      "question": "Un jeu fétiche",
+      "reponse": "Minecraft, sans aucune hésitation."
+    },
+    {
+      "question": "Ce que j'écoute",
+      "reponse": "Malheureusement... tout ce qui sonne bien !"
+    },
+    {
+      "question": "Ma boisson de travail préférée",
+      "reponse": "Un bon café pour rester en éveil, et un verre d'eau pour la santé."
+    }
+  ]
+}

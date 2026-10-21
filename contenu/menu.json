@@ -1,0 +1,14 @@
+[
+  {
+    "libelle": "Mon CV",
+    "fichier": "/fichiers/CV.pdf"
+  },
+  {
+    "libelle": "Stage au Girofard",
+    "fichier": "/fichiers/stage-girofard.pdf"
+  },
+  {
+    "libelle": "Qui suis-je ?",
+    "page": "qui-suis-je.html"
+  }
+]

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio · Rose Pagotto</title>
+  <meta name="description" content="Portfolio de Rose Pagotto, animatrice socioculturelle, vidéaste et photographe à Bordeaux : projets, parcours, galerie et contact.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preload" href="polices/bowlby-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://rosepagotto.github.io/Portfolio/">
+  <meta name="author" content="Rose Pagotto">
+  <meta name="theme-color" content="#171513">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rose Pagotto">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://rosepagotto.github.io/Portfolio/">
+  <meta property="og:title" content="Portfolio · Rose Pagotto">
+  <meta property="og:description" content="Portfolio de Rose Pagotto, animatrice socioculturelle, vidéaste et photographe à Bordeaux : projets, parcours, galerie et contact.">
+  <meta property="og:image" content="https://rosepagotto.github.io/Portfolio/images/partage.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rose Pagotto, animatrice socioculturelle, vidéaste et photographe : portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio · Rose Pagotto">
+  <meta name="twitter:description" content="Portfolio de Rose Pagotto, animatrice socioculturelle, vidéaste et photographe à Bordeaux : projets, parcours, galerie et contact.">
+  <meta name="twitter:image" content="https://rosepagotto.github.io/Portfolio/images/partage.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rose Pagotto",
+    "jobTitle": "Animatrice socioculturelle",
+    "description": "Animatrice socioculturelle, vidéaste et photographe à Bordeaux, étudiante en BUT Animation sociale et socioculturelle.",
+    "url": "https://rosepagotto.github.io/Portfolio/",
+    "image": "https://rosepagotto.github.io/Portfolio/images/partage.png",
+    "address": { "@type": "PostalAddress", "addressLocality": "Pessac", "addressRegion": "Nouvelle-Aquitaine", "addressCountry": "FR" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "IUT Bordeaux Montaigne" },
+    "knowsAbout": ["Animation socioculturelle", "Audiovisuel", "Photographie", "Économie sociale et solidaire", "Jeux vidéo"]
+  }
+  </script>
+</head>
+<body>
+  <a class="evitement" href="#a-propos">Aller au contenu</a>
+
+  <header class="bandeau">
+    <div class="interieur">
+      <h1 id="nom">Rose Pagotto</h1>
+      <p id="sous-titre">Animatrice socioculturelle · Vidéaste · Photographe</p>
+    </div>
+    <div class="ruban" id="ruban" aria-hidden="true"></div>
+  </header>
+
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="interieur">
+      <button type="button" class="nav-bouton" id="nav-bouton" aria-expanded="false" aria-controls="nav-liens">Menu</button>
+      <ul class="nav-liens" id="nav-liens">
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#appreciations">Appréciations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="plus">
+        <button type="button" class="son-bouton" id="son-bouton" aria-pressed="false" aria-label="Activer les effets sonores"><svg class="son-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3Z"/><path class="son-ondes" d="M16 9a5 5 0 0 1 0 6M18.5 6.5a9 9 0 0 1 0 11"/><path class="son-barre" d="M4 4l16 16"/></svg></button>
+        <button type="button" class="plus-bouton" id="plus-bouton" aria-expanded="false" aria-controls="plus-liste">Plus <span class="chevron" aria-hidden="true"></span></button>
+        <ul class="plus-liste" id="plus-liste" hidden></ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="a-propos">
+      <div class="interieur">
+        <h2 class="plaque-titre">À propos</h2>
+        <div class="apropos" id="a-propos-contenu"></div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <div class="interieur">
+        <h2 class="plaque-titre">Compétences</h2>
+        <ul class="comps" id="competences-liste"></ul>
+      </div>
+    </section>
+
+    <section id="projets">
+      <div class="interieur">
+        <h2 class="plaque-titre">Projets</h2>
+        <div class="filtres" id="projets-filtres" role="group" aria-label="Filtrer les projets par catégorie"></div>
+        <ul class="projets" id="projets-liste"></ul>
+      </div>
+    </section>
+
+    <section id="parcours">
+      <div class="interieur">
+        <h2 class="plaque-titre">Parcours</h2>
+        <div class="filtres" id="parcours-filtres" role="group" aria-label="Filtrer le parcours par catégorie"></div>
+        <ul class="parcours" id="parcours-liste"></ul>
+      </div>
+    </section>
+
+    <section id="galerie">
+      <div class="interieur">
+        <h2 class="plaque-titre">Galerie</h2>
+        <ul class="galerie" id="galerie-liste"></ul>
+      </div>
+    </section>
+
+    <section id="appreciations">
+      <div class="interieur">
+        <h2 class="plaque-titre">Appréciations</h2>
+        <ul class="apprs" id="appreciations-liste"></ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="interieur">
+        <div class="contact" id="contact-contenu">
+          <h2 class="contact-titre">Contact</h2>
+        </div>
+      </div>
+    </section>
+
+    <noscript><p class="erreur">Ce site a besoin de JavaScript pour afficher son contenu. Rose Pagotto, animatrice socioculturelle, vidéaste et photographe à Pessac (Bordeaux) : rosepagottopro@gmail.com</p></noscript>
+  </main>
+
+  <footer class="pied"><div class="interieur"><p id="pied-texte"></p><div class="pied-actions"><a class="pied-lien" href="#a-propos">↑ Haut de page</a><button type="button" class="pied-lien" id="credits-musique-ouvrir">Crédits musicaux</button></div></div></footer>
+
+  <dialog id="pdf-dialog" class="pdf" aria-labelledby="pdf-titre">
+    <div class="pdf-tete">
+      <h2 id="pdf-titre"></h2>
+      <a class="bouton" id="pdf-telecharger" href="#" download hidden>Télécharger</a>
+      <button type="button" class="bouton" id="pdf-fermer">Fermer</button>
+    </div>
+    <div class="pdf-corps" id="pdf-corps"></div>
+  </dialog>
+
+  <dialog id="photo-dialog" class="photo" aria-label="Photo en grand">
+    <figure id="photo-fig"></figure>
+    <div class="photo-barre">
+      <button type="button" class="bouton" id="photo-precedente" aria-label="Photo précédente">←</button>
+      <span id="photo-compteur" aria-live="polite"></span>
+      <button type="button" class="bouton" id="photo-suivante" aria-label="Photo suivante">→</button>
+      <button type="button" class="bouton" id="photo-fermer">Fermer</button>
+    </div>
+  </dialog>
+
+  <aside class="lecteur-musique" id="lecteur-musique" aria-label="Lecteur musical" hidden>
+    <audio id="musique-audio" preload="metadata"></audio>
+    <div class="lecteur-ligne"><span class="lecteur-indicateur" aria-hidden="true">♫</span><div class="lecteur-infos"><span class="lecteur-etiquette">BANDE-SON</span><strong id="musique-titre">Aucune piste</strong><span id="musique-auteur"></span></div><button type="button" class="lecteur-reduire" id="musique-compact" aria-label="Réduire le lecteur musical" aria-pressed="false" title="Réduire le lecteur"><span class="lecteur-chevron" aria-hidden="true"></span></button></div>
+    <div class="lecteur-progression"><input id="musique-progression" type="range" min="0" max="1000" value="0" step="1" aria-label="Position dans le morceau"><div class="lecteur-temps"><span id="musique-temps-actuel">0:00</span><span id="musique-temps-total">–:––</span></div></div>
+    <div class="lecteur-commandes"><button type="button" id="musique-precedent" aria-label="Piste précédente" title="Piste précédente">←</button><button type="button" id="musique-lecture" aria-label="Lire la musique" title="Lire la musique">▶</button><button type="button" id="musique-suivant" aria-label="Piste suivante aléatoire" title="Piste suivante aléatoire">→</button><button type="button" id="musique-volume" aria-label="Couper la musique" title="Couper la musique">♫</button></div>
+  </aside>
+  <dialog id="credits-musique-dialog" class="credits-musique" aria-labelledby="credits-musique-titre"><div class="credits-musique-tete"><h2 id="credits-musique-titre">Crédits musicaux</h2><button type="button" class="bouton" id="credits-musique-fermer">Fermer</button></div><div id="credits-musique-liste" class="credits-musique-liste"></div></dialog>
+  <script src="js/sons.js"></script>
+  <script src="js/musique.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/deco.js"></script>
+  <script src="js/accueil.js"></script>
+  <script src="js/jeu.js"></script>
+</body>
+</html>

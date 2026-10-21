@@ -1,0 +1,328 @@
+# Configuration de Pages CMS (https://pagescms.org)
+# Ce fichier décrit les formulaires que tu verras dans le CMS.
+# Il ne change pas l'apparence du site : seulement ce que tu peux modifier.
+
+media:
+  - name: images
+    label: Images
+    input: images
+    output: /images
+    categories: [image]
+    rename: safe
+  - name: documents
+    label: Documents PDF
+    input: fichiers
+    output: /fichiers
+    categories: [document]
+    rename: safe
+  - name: audios
+    label: Musiques de fond
+    input: audios
+    output: /audios
+    categories: [audio]
+    rename: safe
+
+content:
+  - name: profil
+    label: Profil, À propos et contact
+    type: file
+    path: contenu/profil.json
+    format: json
+    fields:
+      - name: nom
+        type: string
+        label: Nom
+        required: true
+      - name: sous_titre
+        type: string
+        label: Sous-titre (sous le nom, en haut de page)
+      - name: accroche
+        type: string
+        label: Phrase d'accroche
+      - name: a_propos
+        type: text
+        label: Texte de présentation
+        description: Sépare les paragraphes par une ligne vide.
+      - name: tags
+        type: string
+        list: true
+        label: Mots-clés
+      - name: email
+        type: string
+        label: Adresse e-mail
+      - name: ville
+        type: string
+        label: Ville
+      - name: linkedin
+        type: string
+        label: Lien LinkedIn
+        description: Adresse complète (https://…). Laisse vide pour ne pas l'afficher.
+      - name: reseaux
+        label: Autres réseaux sociaux
+        type: object
+        fields:
+          - name: youtube
+            type: string
+            label: YouTube
+            description: URL de ta chaîne. Laisse vide pour masquer le bouton.
+          - name: instagram
+            type: string
+            label: Instagram
+            description: URL de ton profil. Laisse vide pour masquer le bouton.
+          - name: letterboxd
+            type: string
+            label: Letterboxd
+            description: URL de ton profil. Laisse vide pour masquer le bouton.
+          - name: discord
+            type: string
+            label: Discord
+            description: Lien d'invitation ou de profil public. Laisse vide pour masquer le bouton.
+
+  - name: competences
+    label: Compétences
+    type: file
+    path: contenu/competences.json
+    format: json
+    list: true
+    fields:
+      - name: titre
+        type: string
+        label: Compétence
+        required: true
+      - name: vu_dans
+        type: string
+        list: true
+        label: Vu dans
+        description: >-
+          Écris le titre exact d'un projet (ex. Cin'EHPAD) ou le nom d'une structure du parcours
+          (ex. Ricochet). Le lien se crée tout seul. Écris « Galerie » pour renvoyer vers la galerie.
+
+  - name: projets
+    label: Projets
+    type: file
+    path: contenu/projets.json
+    format: json
+    list: true
+    fields:
+      - name: titre
+        type: string
+        label: Titre
+        required: true
+      - name: categorie
+        type: string
+        label: Type précis du projet
+        description: Affiché sous le titre. Par exemple « Court métrage », « Podcast », « Excel ».
+      - name: tampon
+        type: select
+        label: Tampon (catégorie du filtre)
+        description: >-
+          Regroupe les projets dans les filtres. Les boutons de filtre se créent tout seuls
+          d'après les tampons utilisés.
+        options:
+          values: [Vidéo, Podcast, Excel, Photo, Écrit, Animation, Autre]
+      - name: description
+        type: text
+        label: Description
+        description: Sépare les paragraphes par une ligne vide.
+      - name: lien
+        type: string
+        label: Lien externe (vidéo, podcast…)
+        description: Adresse complète (https://…). Laisse vide s'il n'y en a pas.
+      - name: fichier
+        type: file
+        label: Document PDF
+        options:
+          media: documents
+      - name: image
+        type: image
+        label: Image
+        options:
+          media: images
+
+  - name: parcours
+    label: Parcours
+    type: file
+    path: contenu/parcours.json
+    format: json
+    list: true
+    description: >-
+      L'ordre dans cette liste n'a pas d'importance : le site trie tout seul, du plus récent au plus ancien,
+      d'après la date de début.
+    fields:
+      - name: titre
+        type: string
+        label: Intitulé
+        required: true
+      - name: structure
+        type: string
+        label: Structure et lieu
+      - name: type
+        type: select
+        label: Catégorie
+        required: true
+        options:
+          values: [Travail, Bénévolat, Études, Diplômes]
+      - name: debut
+        type: string
+        label: Début
+        description: >-
+          Une année (2025) ou une année et un mois (2025-03). Laisse vide si tu ne la connais pas.
+      - name: fin
+        type: string
+        label: Fin
+        description: Même format que le début. Laisse vide pour une expérience d'un seul moment.
+      - name: en_cours
+        type: boolean
+        label: En cours
+        description: Affiche « depuis … » à la place de la date de fin.
+      - name: detail
+        type: string
+        label: Précision (facultatif)
+        description: Par exemple « Mention Bien ».
+
+  - name: galerie
+    label: Galerie
+    type: file
+    path: contenu/galerie.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        type: image
+        label: Photo
+        options:
+          media: images
+      - name: legende
+        type: string
+        label: Légende
+      - name: alt
+        type: string
+        label: Description de l'image
+        description: Pour les personnes qui ne voient pas l'image. Facultatif.
+
+  - name: appreciations
+    label: Appréciations
+    type: file
+    path: contenu/appreciations.json
+    format: json
+    list: true
+    fields:
+      - name: texte
+        type: text
+        label: Texte de l'appréciation
+        required: true
+      - name: nom
+        type: string
+        label: Nom
+        required: true
+      - name: fonction
+        type: string
+        label: Fonction et structure
+
+  - name: musiques
+    label: Musiques de fond et crédits
+    type: file
+    path: contenu/musiques.json
+    format: json
+    list: true
+    description: >-
+      Ajoute ici les pistes téléversées dans la médiathèque « Musiques de fond ». Pages CMS ne remplit pas automatiquement les champs depuis les métadonnées audio : renseigne ou corrige les crédits après l'ajout du fichier. Les titres sont affichés dans le lecteur et les crédits en pied de page.
+    fields:
+      - name: fichier
+        type: file
+        label: Fichier audio
+        required: true
+        options:
+          media: audios
+      - name: titre
+        type: string
+        label: Titre du morceau
+        description: Si vide, le nom du fichier sera utilisé comme titre.
+      - name: auteur
+        type: string
+        label: Auteur / compositeur / interprète
+      - name: droits
+        type: string
+        label: Titulaire des droits / crédit demandé
+      - name: licence
+        type: string
+        label: Licence ou autorisation
+        description: "Exemple : CC BY 4.0, autorisation écrite, domaine public vérifié."
+      - name: source
+        type: string
+        label: Source / URL de référence
+      - name: attribution
+        type: text
+        label: Texte de crédit à afficher
+        description: Facultatif. Si renseigné, ce texte complet sera utilisé dans la liste des crédits.
+
+  - name: menu
+    label: Menu « Plus »
+    type: file
+    path: contenu/menu.json
+    format: json
+    list: true
+    description: Les documents et pages du menu déroulant en haut du site.
+    fields:
+      - name: libelle
+        type: string
+        label: Nom affiché
+        required: true
+      - name: fichier
+        type: file
+        label: Document PDF
+        options:
+          media: documents
+      - name: page
+        type: string
+        label: Page du site
+        description: Réservé aux pages du site (ex. qui-suis-je.html). Laisse vide pour un PDF.
+
+  - name: qui-suis-je
+    label: Page « Qui suis-je ? »
+    type: file
+    path: contenu/qui-suis-je.json
+    format: json
+    fields:
+      - name: photo
+        type: image
+        label: Photo
+        options:
+          media: images
+      - name: legende
+        type: string
+        label: Légende de la photo
+      - name: phrase
+        type: string
+        label: En une phrase
+      - name: histoire
+        type: text
+        label: Mon histoire
+        description: Sépare les paragraphes par une ligne vide.
+      - name: passions
+        type: object
+        list: true
+        label: Mes passions
+        fields:
+          - name: titre
+            type: string
+            label: Titre
+          - name: texte
+            type: text
+            label: Quelques lignes
+          - name: image
+            type: image
+            label: Image (facultative)
+            options:
+              media: images
+      - name: en_vrac
+        type: object
+        list: true
+        label: En vrac
+        fields:
+          - name: question
+            type: string
+            label: Question
+          - name: reponse
+            type: string
+            label: Réponse

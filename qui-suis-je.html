@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qui suis-je ? · Rose Pagotto</title>
+  <meta name="description" content="Qui est Rose Pagotto : son histoire, ses passions, ses petites choses en vrac.">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preload" href="polices/bowlby-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://rosepagotto.github.io/Portfolio/qui-suis-je.html">
+  <meta name="author" content="Rose Pagotto">
+  <meta name="theme-color" content="#171513">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rose Pagotto">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://rosepagotto.github.io/Portfolio/qui-suis-je.html">
+  <meta property="og:title" content="Qui suis-je ? · Rose Pagotto">
+  <meta property="og:description" content="Qui est Rose Pagotto : son histoire, ses passions, ses petites choses en vrac.">
+  <meta property="og:image" content="https://rosepagotto.github.io/Portfolio/images/partage.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rose Pagotto, animatrice socioculturelle, vidéaste et photographe : portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Qui suis-je ? · Rose Pagotto">
+  <meta name="twitter:description" content="Qui est Rose Pagotto : son histoire, ses passions, ses petites choses en vrac.">
+  <meta name="twitter:image" content="https://rosepagotto.github.io/Portfolio/images/partage.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-qui">
+  <a class="evitement" href="#qui-contenu">Aller au contenu</a>
+
+  <header class="bandeau">
+    <div class="interieur">
+      <div class="qui-barre-haute"><a class="retour" href="index.html"><span aria-hidden="true">←</span> Retour au site</a><button type="button" class="son-bouton" id="son-bouton" aria-pressed="false" aria-label="Activer les effets sonores"><svg class="son-icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3Z"/><path class="son-ondes" d="M16 9a5 5 0 0 1 0 6M18.5 6.5a9 9 0 0 1 0 11"/><path class="son-barre" d="M4 4l16 16"/></svg></button></div>
+      <h1>Qui suis-je ?</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="interieur" id="qui-contenu"></div>
+    <noscript><p class="erreur">Ce site a besoin de JavaScript pour afficher son contenu.</p></noscript>
+  </main>
+
+  <footer class="pied"><div class="interieur"><p id="pied-texte"></p><div class="pied-actions"><button type="button" class="pied-lien" id="credits-musique-ouvrir">Crédits musicaux</button></div></div></footer>
+
+  <aside class="lecteur-musique" id="lecteur-musique" aria-label="Lecteur musical" hidden>
+    <audio id="musique-audio" preload="metadata"></audio>
+    <div class="lecteur-ligne"><span class="lecteur-indicateur" aria-hidden="true">♫</span><div class="lecteur-infos"><span class="lecteur-etiquette">BANDE-SON</span><strong id="musique-titre">Aucune piste</strong><span id="musique-auteur"></span></div><button type="button" class="lecteur-reduire" id="musique-compact" aria-label="Réduire le lecteur musical" aria-pressed="false" title="Réduire le lecteur"><span class="lecteur-chevron" aria-hidden="true"></span></button></div>
+    <div class="lecteur-progression"><input id="musique-progression" type="range" min="0" max="1000" value="0" step="1" aria-label="Position dans le morceau"><div class="lecteur-temps"><span id="musique-temps-actuel">0:00</span><span id="musique-temps-total">–:––</span></div></div>
+    <div class="lecteur-commandes"><button type="button" id="musique-precedent" aria-label="Piste précédente" title="Piste précédente">←</button><button type="button" id="musique-lecture" aria-label="Lire la musique" title="Lire la musique">▶</button><button type="button" id="musique-suivant" aria-label="Piste suivante aléatoire" title="Piste suivante aléatoire">→</button><button type="button" id="musique-volume" aria-label="Couper la musique" title="Couper la musique">♫</button></div>
+  </aside>
+  <dialog id="credits-musique-dialog" class="credits-musique" aria-labelledby="credits-musique-titre"><div class="credits-musique-tete"><h2 id="credits-musique-titre">Crédits musicaux</h2><button type="button" class="bouton" id="credits-musique-fermer">Fermer</button></div><div id="credits-musique-liste" class="credits-musique-liste"></div></dialog>
+  <script src="js/sons.js"></script>
+  <script src="js/musique.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/deco.js"></script>
+  <script src="js/qui.js"></script>
+</body>
+</html>
