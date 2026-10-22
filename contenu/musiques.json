@@ -1,17 +1,42 @@
 [
   {
-    "fichier": "/audios/alpha-c418.mp3"
+    "fichier": "/audios/alpha-c418.mp3",
+    "titre": "Alpha",
+    "auteur": "Daniel Rosenfeld (C418)",
+    "droits": "C418 (Daniel Rosenfeld)",
+    "licence": "Tous droits réservés / Copyright C418.",
+    "source": "https://youtu.be/xLfm2nnCOpc?si=3-QVTfO4ldKMlaLU"
   },
   {
-    "fichier": "/audios/mice-on-venus-c418.mp3"
+    "fichier": "/audios/mice-on-venus-c418.mp3",
+    "titre": "Mice on Venus",
+    "auteur": "Daniel Rosenfeld (C418)",
+    "droits": "C418 (Daniel Rosenfeld)",
+    "licence": "Tous droits réservés / Copyright C418.",
+    "source": "https://youtu.be/DZ47H84Bc_Q?si=X5IETaozXmhDYyio"
   },
   {
-    "fichier": "/audios/wait-c418.mp3"
+    "fichier": "/audios/wait-c418.mp3",
+    "titre": "Wait",
+    "auteur": "Daniel Rosenfeld (C418)",
+    "droits": "C418 (Daniel Rosenfeld)",
+    "licence": "Tous droits réservés / Copyright C418.",
+    "source": "https://youtu.be/sBl9qcaQos4?si=R2ZtCq7j0QmNg0VM"
   },
   {
-    "fichier": "/audios/purpose-is-glorious-natalie-holt.mp3"
+    "fichier": "/audios/purpose-is-glorious-natalie-holt.mp3",
+    "titre": "Purpose Is Glorious",
+    "auteur": "Natalie Holt",
+    "droits": "Marvel Music, Inc. / Hollywood Records / Walt Disney Records",
+    "licence": "Tous droits réservés / Copyright © Disney / Marvel.",
+    "source": "https://youtu.be/0KOZ3VbPB0k?si=oTxfMniM7o3iq6CY"
   },
   {
-    "fichier": "/audios/lena-raine-prologue.mp3"
+    "fichier": "/audios/lena-raine-prologue.mp3",
+    "titre": "Prologue",
+    "auteur": "Lena Raine",
+    "droits": "Lena Raine / Materia Music",
+    "licence": "Tous droits réservés / Copyright Lena Raine.",
+    "source": "https://youtu.be/Ctuo3ws3EKs?si=L_PZn0ZGnooSkHue"
   }
 ]
