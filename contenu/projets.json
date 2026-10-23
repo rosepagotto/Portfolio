@@ -4,7 +4,8 @@
     "categorie": "Excel",
     "tampon": "Excel",
     "description": "Document statistique interactif réalisé dans le cadre d'un usage personnel retraçant des statistiques autour d'un hobby vidéoludique. Entre classements, listes, données calculées automatiquement et mise à jour visuelle, ce document est entièrement automatisé et fait main.",
-    "lien": "https://docs.google.com/spreadsheets/d/1P7td96RPhWO9j2KiP1tthePPLFpTsWSMYetUKfKa9sA/edit?usp=sharing"
+    "lien": "https://docs.google.com/spreadsheets/d/1P7td96RPhWO9j2KiP1tthePPLFpTsWSMYetUKfKa9sA/edit?usp=sharing",
+    "animation": false
   },
   {
     "titre": "La Rumeur",
@@ -12,7 +13,8 @@
     "tampon": "Vidéo",
     "description": "Court métrage réalisé dans le cadre de notre formation avec pour objectif de véhiculer un message de sensibilisation, sur une base libre autour de la rumeur dans les milieux sociaux.",
     "lien": "https://youtu.be/dKJhPz0RE_E",
-    "image": "/images/image2026-10-19201703799.png"
+    "image": "/images/image2026-10-19201703799.png",
+    "animation": false
   },
   {
     "titre": "Cin'EHPAD",
@@ -20,7 +22,8 @@
     "tampon": "Vidéo",
     "description": "Projet vidéo sous le principe du suédé en partenariat avec l'EHPAD Léon Dubedat de Biscarosse dans le cadre de notre temps fort de pratique culturelle en BUT1 ASSC, avec visionnage par l'ensemble de la promotion.",
     "lien": "https://youtu.be/7qVO6t2JKiQ",
-    "image": "/images/image2026-10-19201716086.png"
+    "image": "/images/image2026-10-19201716086.png",
+    "animation": false
   },
   {
     "titre": "L'envol d'Icare",
@@ -28,7 +31,8 @@
     "tampon": "Podcast",
     "description": "Podcast de la série \"Hors les murs\" de 5 épisodes réalisé avec des ami·es dans le cadre de notre formation. Il traite de la place de la place de la photo dans la culture et son rôle en tant que vecteur de modernisation de l'accès à celle-ci.",
     "lien": "https://youtu.be/YssFsV8IF0I",
-    "image": "/images/image2026-10-19201740725.png"
+    "image": "/images/image2026-10-19201740725.png",
+    "animation": false
   },
   {
     "titre": "Le Geste de Trop",
@@ -36,7 +40,8 @@
     "tampon": "Vidéo",
     "description": "Court métrage réalisé dans le cadre de la deuxième édition du Festival des Révélations Sociales organisé par Nayra Vacaflor. Notre court métrage a été nominé dans les catégories \"Meilleur montage\", \"Meilleur scénario\" et \"Meilleur ...\"",
     "lien": "https://youtu.be/7pNsMSCfHt8",
-    "image": "/images/image2026-10-19201805411.png"
+    "image": "/images/image2026-10-19201805411.png",
+    "animation": false
   },
   {
     "titre": "ABSOLUTE CINEGEM",
@@ -44,6 +49,7 @@
     "tampon": "Vidéo",
     "description": "Projet vidéo dans la continuité du projet \"Cin'EHPAD\" réalisé un an plus tôt sous le principe du suédé en partenariat avec l'association GEM Le Trèfle à Talence dans le cadre de notre temps fort de pratique culturelle en BUT2 ASSC, avec visionnage par l'ensemble de la promotion.",
     "lien": "https://www.youtube.com/watch?v=SZPYWvaqHow",
-    "image": "/images/image2026-10-19201825441.png"
+    "image": "/images/image2026-10-19201825441.png",
+    "animation": false
   }
 ]

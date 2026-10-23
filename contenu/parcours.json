@@ -6,7 +6,8 @@
     "debut": "2026-05",
     "fin": "2026-06",
     "en_cours": false,
-    "detail": "Médiation et surveillance sur la 30ème marche des fiertés de Bordeaux ainsi que sur l'afterpride aux Quais des sports. Mon rôle était d'assurer la sécurité, le bien-être et de prévenir et résoudre les situations complexes avec les différents publics. Ces événements ont rassemblé 10.000 à 15.000 personnes sur l'ensemble de la journée."
+    "detail": "Médiation et surveillance sur la 30ème marche des fiertés de Bordeaux ainsi que sur l'afterpride aux Quais des sports. Mon rôle était d'assurer la sécurité, le bien-être et de prévenir et résoudre les situations complexes avec les différents publics. Ces événements ont rassemblé 10.000 à 15.000 personnes sur l'ensemble de la journée.",
+    "animation": false
   },
   {
     "titre": "Animatrice Socioculturelle",
@@ -15,7 +16,8 @@
     "debut": "2026-04",
     "fin": "2026-06",
     "en_cours": false,
-    "detail": "Engagement bénévole au sein d'un centre associatif LGBTIQAP+, avecaccueil et accompagnement de publics variés, gestion de tâches administratives et gestionnelles, et participation active à la vie et aux actions de l'association"
+    "detail": "Engagement bénévole au sein d'un centre associatif LGBTIQAP+, avecaccueil et accompagnement de publics variés, gestion de tâches administratives et gestionnelles, et participation active à la vie et aux actions de l'association",
+    "animation": true
   },
   {
     "titre": "Chargée de communication",
@@ -24,7 +26,8 @@
     "debut": "2025-09",
     "fin": "2026-10",
     "en_cours": false,
-    "detail": "Membre du bureau active et responsable de la communication sur lesréseaux sociaux des actions de l’association, centrées autour du Commerce Équitable et de l’Économie Sociale et Solidaire, et avec les différents partenaires & publics."
+    "detail": "Membre du bureau active et responsable de la communication sur lesréseaux sociaux des actions de l’association, centrées autour du Commerce Équitable et de l’Économie Sociale et Solidaire, et avec les différents partenaires & publics.",
+    "animation": false
   },
   {
     "titre": "Animatrice Socioculturelle",
@@ -33,7 +36,8 @@
     "debut": "2025-01",
     "fin": "2025-02",
     "en_cours": false,
-    "detail": "En lien avec tous types de publics, tâches administratives et gestionnelles, service et contact avec la clientèle, entretien et animation d’une ludothèque."
+    "detail": "En lien avec tous types de publics, tâches administratives et gestionnelles, service et contact avec la clientèle, entretien et animation d’une ludothèque.",
+    "animation": true
   },
   {
     "titre": "BUT Animation sociale et socioculturelle",
@@ -42,7 +46,8 @@
     "debut": "2024",
     "fin": "2027",
     "en_cours": true,
-    "detail": "Filière ACTA (2ème année)"
+    "detail": "Filière ACTA (2ème année)",
+    "animation": true
   },
   {
     "titre": "L1 LLCER Anglais",
@@ -50,7 +55,8 @@
     "type": "Études",
     "debut": "2023",
     "fin": "2024",
-    "en_cours": false
+    "en_cours": false,
+    "animation": false
   },
   {
     "titre": "Agente technique polyvalente",
@@ -59,7 +65,8 @@
     "debut": "2023-07",
     "fin": "2023-08",
     "en_cours": false,
-    "detail": "Expérience dans le nettoyage intensif de zones résidentielles de vacances, le travail en équipe, ainsi que l'autonomie, la productivité, la rigueur, et l'aide occasionnelle des différents publics."
+    "detail": "Expérience dans le nettoyage intensif de zones résidentielles de vacances, le travail en équipe, ainsi que l'autonomie, la productivité, la rigueur, et l'aide occasionnelle des différents publics.",
+    "animation": false
   },
   {
     "titre": "Bac STI2D",
@@ -67,7 +74,8 @@
     "type": "Diplômes",
     "debut": "2023-07",
     "en_cours": false,
-    "detail": "Mention Bien"
+    "detail": "Mention Bien",
+    "animation": false
   },
   {
     "titre": "BAFA",
@@ -75,7 +83,8 @@
     "type": "Diplômes",
     "debut": "2023-02",
     "en_cours": false,
-    "detail": "Approfondissement Nature"
+    "detail": "Approfondissement Nature",
+    "animation": false
   },
   {
     "titre": "Animatrice saisonnière",
@@ -84,7 +93,8 @@
     "debut": "2022",
     "fin": "2026",
     "en_cours": false,
-    "detail": "Animation auprès d’enfants âgés de 3 à 12 ans, avec de l’accueil, du divertissement, de la garde, demandant de la responsabilité, de la créativité, ainsi que de l’autorité et des prises d’initiatives."
+    "detail": "Animation auprès d’enfants âgés de 3 à 12 ans, avec de l’accueil, du divertissement, de la garde, demandant de la responsabilité, de la créativité, ainsi que de l’autorité et des prises d’initiatives.",
+    "animation": true
   },
   {
     "titre": "Stagiaire libraire",
@@ -92,6 +102,7 @@
     "type": "Travail",
     "debut": "2019-12",
     "en_cours": false,
-    "detail": "Accueil et conseil clientèle, mise en rayon et gestion des stocks, tenue de caisse et suivi des commandes, dans un environnement culturel exigeant rigueur et sens du service."
+    "detail": "Accueil et conseil clientèle, mise en rayon et gestion des stocks, tenue de caisse et suivi des commandes, dans un environnement culturel exigeant rigueur et sens du service.",
+    "animation": false
   }
 ]

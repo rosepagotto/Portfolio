@@ -113,13 +113,15 @@ content:
         label: Type précis du projet
         description: Affiché sous le titre. Par exemple « Court métrage », « Podcast », « Excel ».
       - name: tampon
-        type: select
-        label: Tampon (catégorie du filtre)
+        type: string
+        label: Tag visible (tampon)
         description: >-
-          Regroupe les projets dans les filtres. Les boutons de filtre se créent tout seuls
-          d'après les tampons utilisés.
-        options:
-          values: [Vidéo, Podcast, Excel, Photo, Écrit, Animation, Autre]
+          Nom exact d'un tag défini dans « Configuration des tags ». Animation est un filtre uniquement :
+          ne l'utilise pas ici, il ne doit jamais apparaître comme tampon sur le projet.
+      - name: animation
+        type: boolean
+        label: Inclure dans le filtre Animation
+        description: Ce choix ajoute le projet au filtre Animation sans afficher de tampon Animation.
       - name: description
         type: text
         label: Description
@@ -179,6 +181,53 @@ content:
         type: string
         label: Précision (facultatif)
         description: Par exemple « Mention Bien ».
+      - name: animation
+        type: boolean
+        label: Inclure dans le filtre Animation
+        description: Le tag Animation sert uniquement au filtrage et ne s'affiche jamais sur l'entrée.
+
+  - name: tags
+    label: Configuration des tags
+    type: file
+    path: contenu/tags.json
+    format: json
+    fields:
+      - name: projets
+        label: Tags des Projets (hors Animation)
+        type: object
+        list: true
+        fields:
+          - name: cle
+            type: string
+            label: Identifiant technique (ne pas modifier)
+            required: true
+          - name: nom
+            type: string
+            label: Nom du tag
+            required: true
+          - name: couleur
+            type: string
+            label: Couleur (code hexadécimal)
+            description: "Exemple : #64C98B"
+            required: true
+      - name: parcours
+        label: Catégories du Parcours
+        type: object
+        list: true
+        fields:
+          - name: cle
+            type: string
+            label: Identifiant technique (ne pas modifier)
+            required: true
+          - name: nom
+            type: string
+            label: Nom de la catégorie
+            required: true
+          - name: couleur
+            type: string
+            label: Couleur (code hexadécimal)
+            description: "Exemple : #E87575"
+            required: true
 
   - name: galerie
     label: Galerie

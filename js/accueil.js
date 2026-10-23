@@ -7,8 +7,6 @@
   const DUREE_FILTRE = calme ? 0 : 420;
 
   const TYPES = { travail: 'Travail', benevolat: 'Bénévolat', etudes: 'Études', diplomes: 'Diplômes' };
-  const COULEUR_TYPE = { travail: '--rouge', benevolat: '--menthe', etudes: '--bleu', diplomes: '--lilas' };
-  const COULEURS = ['--jaune', '--rouge', '--menthe', '--bleu', '--lilas'];
   const ROT = ['-2deg', '1.5deg', '-1.5deg', '2deg'];
 
   /* ---------- Apparitions : on prépare l'observateur tout de suite ---------- */
@@ -33,10 +31,10 @@
     [...liste.children].forEach((c, i) => c.style.setProperty('--d', Math.min(i, max) * pas + 'ms'));
   if (io) document.querySelectorAll('.plaque-titre').forEach((n) => io.observe(n));
 
-  let profil, comps, projets, parcours, galerie, appr, menu;
+  let profil, comps, projets, parcours, galerie, appr, menu, configurationTags;
   try {
-    [profil, comps, projets, parcours, galerie, appr, menu] = await Promise.all(
-      ['profil', 'competences', 'projets', 'parcours', 'galerie', 'appreciations', 'menu'].map(charger)
+    [profil, comps, projets, parcours, galerie, appr, menu, configurationTags] = await Promise.all(
+      ['profil', 'competences', 'projets', 'parcours', 'galerie', 'appreciations', 'menu', 'tags'].map(charger)
     );
   } catch (e) {
     console.error(e);
@@ -97,7 +95,7 @@
     let actif = '';
     const boutons = [{ cle: '', libelle: 'Tout', couleur: '--papier' }, ...etiquettes].map((e, n) => {
       const b = el('button', {
-        type: 'button', class: 'tampon filtre', style: '--c:var(' + e.couleur + ');--r:' + ROT[n % 4],
+        type: 'button', class: 'tampon filtre', style: '--c:' + (String(e.couleur || '').startsWith('--') ? 'var(' + e.couleur + ')' : e.couleur || '#D9D4C8') + ';--r:' + ROT[n % 4],
         'aria-pressed': String(e.cle === ''), 'data-filtre': e.cle, text: e.libelle,
       });
       b.addEventListener('click', () => appliquer(e.cle === actif ? '' : e.cle));
@@ -121,16 +119,13 @@
 
   /* ---------- Projets ---------- */
   const cibles = [];
-  const familles = [];
-  const couleurFamille = (f) => COULEURS[familles.indexOf(f) % COULEURS.length];
-  projets.forEach((p) => {
-    const f = String(p.tampon || '').trim();
-    if (f && !familles.includes(f)) familles.push(f);
-  });
-
+  const tagsProjets = Array.isArray(configurationTags.projets) ? configurationTags.projets : [];
+  const configProjet = (nom) => tagsProjets.find((t) => (t.cle || norm(t.nom)) === norm(nom).replace(/\s+/g, '-') || norm(t.nom) === norm(nom));
   const lignesProjets = [];
   projets.forEach((p, i) => {
     const famille = String(p.tampon || '').trim();
+    const tag = configProjet(famille);
+    const animation = p.animation === true;
     const corpsId = 'projet-corps-' + i;
     const tete = el('button', { type: 'button', class: 'projet-tete', 'aria-expanded': 'false', 'aria-controls': corpsId },
       el('span', { class: 'projet-texte' },
@@ -138,47 +133,34 @@
         p.categorie ? el('span', { class: 'projet-type', text: p.categorie }) : null
       ),
       el('span', { class: 'cel-tampon' },
-        famille ? el('span', { class: 'tampon', style: '--c:var(' + couleurFamille(famille) + ');--r:' + ROT[i % 4], text: famille }) : null
+        famille && norm(famille) !== 'animation' ? el('span', { class: 'tampon', style: '--c:' + (tag?.couleur || '#D9D4C8') + ';--r:' + ROT[i % 4], text: tag?.nom || famille }) : null
       ),
       el('span', { class: 'signe', 'aria-hidden': 'true' })
     );
     const actions = [];
-    if (urlSure(p.lien)) {
-      actions.push(el('a', { class: 'bouton', href: p.lien, target: '_blank', rel: 'noopener', text: 'Voir le projet' }));
-    }
-    if (p.fichier) {
-      actions.push(el('button', { type: 'button', class: 'bouton', onclick: () => ouvrirDoc(p.fichier, p.titre), text: 'Ouvrir le document' }));
-    }
+    if (urlSure(p.lien)) actions.push(el('a', { class: 'bouton', href: p.lien, target: '_blank', rel: 'noopener', text: 'Voir le projet' }));
+    if (p.fichier) actions.push(el('button', { type: 'button', class: 'bouton', onclick: () => ouvrirDoc(p.fichier, p.titre), text: 'Ouvrir le document' }));
     const corps = el('div', { class: 'projet-corps', id: corpsId },
-      el('div', { class: 'projet-corps-in' },
-        el('div', { class: 'projet-cadre' },
-          p.image ? image(p.image, p.titre, 'projet-image') : null,
-          paragraphes(p.description).map((t) => el('p', { text: t })),
-          actions.length ? el('div', { class: 'actions' }, actions) : null
-        )
-      )
+      el('div', { class: 'projet-corps-in' }, el('div', { class: 'projet-cadre' },
+        p.image ? image(p.image, p.titre, 'projet-image') : null,
+        paragraphes(p.description).map((t) => el('p', { text: t })),
+        actions.length ? el('div', { class: 'actions' }, actions) : null
+      ))
     );
     const li = el('li', { class: 'projet wipe' }, tete, corps);
-    const basculer = (ouvert) => {
-      const o = ouvert === undefined ? !li.classList.contains('ouvert') : ouvert;
-      li.classList.toggle('ouvert', o);
-      tete.setAttribute('aria-expanded', String(o));
-    };
-    tete.addEventListener('click', () => {
-      if (li.classList.contains('att')) { filtresProjets.reset(); basculer(true); } else basculer();
-    });
+    const basculer = (ouvert) => { const o = ouvert === undefined ? !li.classList.contains('ouvert') : ouvert; li.classList.toggle('ouvert', o); tete.setAttribute('aria-expanded', String(o)); };
+    tete.addEventListener('click', () => { if (li.classList.contains('att')) { filtresProjets.reset(); basculer(true); } else basculer(); });
     $('#projets-liste').append(li);
     cibles.push({ cles: [norm(p.titre)], el: li, ouvrir: () => basculer(true) });
-    lignesProjets.push({ li, cle: famille || '__aucun', fermer: () => basculer(false) });
+    lignesProjets.push({ li, cles: [ ...(famille && norm(famille) !== 'animation' ? [tag?.cle || norm(famille)] : []), ...(animation ? ['animation'] : []) ], fermer: () => basculer(false) });
   });
   echelonner($('#projets-liste'));
-
   const filtresProjets = creerFiltres(
     $('#projets-filtres'),
-    familles.map((f) => ({ cle: f, libelle: f, couleur: couleurFamille(f) })),
+    [{ cle: 'animation', libelle: 'Animation', couleur: '#F7D94C' }, ...tagsProjets.map((t) => ({ cle: t.cle || norm(t.nom), libelle: t.nom, couleur: t.couleur || '#D9D4C8' }))],
     lignesProjets
   );
-  if (familles.length < 2) $('#projets-filtres').hidden = true;
+  if (!lignesProjets.some((l) => l.cles.length) ) $('#projets-filtres').hidden = true;
 
   /* ---------- Parcours : entrées compactes, détails dépliables et filtre Animation ---------- */
   const cle = (d, defautMois) => (d ? d.a * 12 + (d.m || defautMois) : null);
@@ -196,6 +178,9 @@
   });
 
   const lignesParcours = [];
+  const tagsParcours = Array.isArray(configurationTags.parcours) ? configurationTags.parcours : [];
+  const configType = (type) => tagsParcours.find((t) => (t.cle || norm(t.nom)) === type);
+  const couleurType = (type) => configType(type)?.couleur || '#D9D4C8';
   const plageCourte = (debut, fin, enCours) => {
     const d = parseDate(debut), f = parseDate(fin);
     if (enCours) return d ? 'depuis ' + d.a : 'en cours';
@@ -207,8 +192,7 @@
   };
   items.forEach(({ p, type }, n) => {
     const corpsId = 'etape-detail-' + n;
-    const texteAnimation = norm([p.titre, p.structure, p.detail, p.type].filter(Boolean).join(' '));
-    const lieAnimation = /animation|animatrice|animateur|animatrice saisonniere|alsh|centre social|accueil de loisirs/.test(texteAnimation);
+    const lieAnimation = p.animation === true;
     const dateComplete = plage(p.debut, p.fin, p.en_cours);
     const dateCourte = plageCourte(p.debut, p.fin, p.en_cours);
     const dateCompressible = Boolean(dateComplete && dateCourte && dateComplete !== dateCourte && /\d{4}/.test(dateComplete));
@@ -226,7 +210,7 @@
         p.structure ? el('span', { class: 'etape-structure', text: p.structure }) : null
       ),
       el('span', { class: 'cel-tampon' },
-        TYPES[type] ? el('span', { class: 'tampon', style: '--c:var(' + COULEUR_TYPE[type] + ');--r:' + ROT[n % 4], text: TYPES[type] }) : null,
+        configType(type) ? el('span', { class: 'tampon', style: '--c:' + couleurType(type) + ';--r:' + ROT[n % 4], text: configType(type).nom }) : null,
       ),
       detail ? el('span', { class: 'etape-signe', 'aria-hidden': 'true' }) : null
     );
@@ -249,8 +233,8 @@
 
   const filtresParcours = creerFiltres(
     $('#parcours-filtres'),
-    [{ cle: 'animation', libelle: 'Animation', couleur: '--jaune' },
-      ...Object.entries(TYPES).map(([k, libelle]) => ({ cle: k, libelle, couleur: COULEUR_TYPE[k] }))],
+    [{ cle: 'animation', libelle: 'Animation', couleur: '#F7D94C' },
+      ...tagsParcours.map((t) => ({ cle: t.cle || norm(t.nom), libelle: t.nom, couleur: t.couleur || '#D9D4C8' }))],
     lignesParcours
   );
 

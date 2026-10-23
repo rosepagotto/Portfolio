@@ -1,0 +1,56 @@
+{
+  "projets": [
+    {
+      "nom": "Excel",
+      "couleur": "#64C98B",
+      "cle": "excel"
+    },
+    {
+      "nom": "Vidéo",
+      "couleur": "#EF7777",
+      "cle": "video"
+    },
+    {
+      "nom": "Podcast",
+      "couleur": "#75B9F2",
+      "cle": "podcast"
+    },
+    {
+      "nom": "Photo",
+      "couleur": "#D7A5E8",
+      "cle": "photo"
+    },
+    {
+      "nom": "Écrit",
+      "couleur": "#F2B879",
+      "cle": "ecrit"
+    },
+    {
+      "nom": "Autre",
+      "couleur": "#D9D4C8",
+      "cle": "autre"
+    }
+  ],
+  "parcours": [
+    {
+      "nom": "Travail",
+      "couleur": "#E87575",
+      "cle": "travail"
+    },
+    {
+      "nom": "Bénévolat",
+      "couleur": "#72C9A1",
+      "cle": "benevolat"
+    },
+    {
+      "nom": "Études",
+      "couleur": "#75B9F2",
+      "cle": "etudes"
+    },
+    {
+      "nom": "Diplômes",
+      "couleur": "#B9A0E8",
+      "cle": "diplomes"
+    }
+  ]
+}
