@@ -1,5 +1,15 @@
 [
   {
+    "titre": "BUT Animation sociale et socioculturelle",
+    "structure": "IUT Bordeaux Montaigne",
+    "type": "Études",
+    "debut": "2024",
+    "fin": "2027",
+    "en_cours": true,
+    "detail": "Filière ACTA (2ème année)",
+    "animation": true
+  },
+  {
     "titre": "Bénévole médiation et sécurité",
     "structure": "Pride et Afterpride de Bordeaux",
     "type": "Bénévolat",
@@ -40,21 +50,11 @@
     "animation": true
   },
   {
-    "titre": "BUT Animation sociale et socioculturelle",
-    "structure": "IUT Bordeaux Montaigne",
-    "type": "Études",
-    "debut": "2024",
-    "fin": "2027",
-    "en_cours": true,
-    "detail": "Filière ACTA (2ème année)",
-    "animation": true
-  },
-  {
     "titre": "L1 LLCER Anglais",
     "structure": "Université Bordeaux Montaigne",
     "type": "Études",
-    "debut": "2023",
-    "fin": "2024",
+    "debut": "2023-09",
+    "fin": "2024-06",
     "en_cours": false,
     "animation": false
   },
@@ -72,7 +72,7 @@
     "titre": "Bac STI2D",
     "structure": "Lycée Jean Moulin, Langon",
     "type": "Diplômes",
-    "debut": "2023-07",
+    "debut": "2023",
     "en_cours": false,
     "detail": "Mention Bien",
     "animation": false
@@ -81,7 +81,7 @@
     "titre": "BAFA",
     "structure": "CEMEA Nouvelle-Aquitaine",
     "type": "Diplômes",
-    "debut": "2023-02",
+    "debut": "2023",
     "en_cours": false,
     "detail": "Approfondissement Nature",
     "animation": true
